@@ -1,0 +1,39 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.movie-card {
+    width: 20vw;
+    transition: all 0.5s ease-in-out;
+    @include mediaQuery("max", "md") {
+        width: 40vw;
+    }
+
+    &__poster {
+        width: 100%;
+
+        &__image {
+            width: 100%;
+        }
+    }
+
+    &__information {
+        width: 100%;
+        @include flexbox(column, center, center);
+
+        &__title {
+            text-align: center;
+            @include setTextAttributes($fontRegular, 20px, $primaryFontColor);
+            @include mediaQuery("min", "xl") {
+                font-size: 1.5vw;
+            }
+            @include mediaQuery("max", "md") {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

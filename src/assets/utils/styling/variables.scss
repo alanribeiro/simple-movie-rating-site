@@ -1,0 +1,27 @@
+@import './fonts.scss';
+
+//---------- BREAKPOINTS ----------
+
+$widthBreakpoints: (
+    'xl': 1920px,
+    'lg': 1170px,
+    'md': 750px,
+    'sm': 320px,
+);
+
+//COLORS
+
+$primaryColor: #333132;
+$secondaryColor: #5C5C5C;
+$loadingDotColor: #FFF;
+$ratingSelectedColor: #E4BB24;
+
+//FONT-FAMILIES
+
+$fontBold: "Lato-Bold";
+$fontRegular: "Lato-Regular";
+
+//FONT COLORS
+
+$primaryFontColor: #FFF;
+$secondaryFontColor: #CCC;

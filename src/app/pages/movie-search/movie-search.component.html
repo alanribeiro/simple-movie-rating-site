@@ -1,0 +1,10 @@
+<main class="page-container">
+    <app-loading *ngIf="loading === true"></app-loading>
+    <div class="page-container__content">
+        <h3 class="page-container__content__title">Movie Rating App</h3>
+        <div class="page-container__content__input-container">
+            <app-search-input></app-search-input>
+        </div>
+        <app-action-button [type]="'primary'" [title]="'Buscar'" (click)="searchMovies()"></app-action-button>
+    </div>
+</main>

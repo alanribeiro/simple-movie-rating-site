@@ -1,0 +1,20 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: rgba(92, 92, 92, 0.6);
+    border-radius: 10px;
+    padding: 0px 10px;
+    @include setDimensions(600px, 40px);
+    @include setTextAttributes($fontBold, 18px, $primaryFontColor);
+    @include mediaQuery("max", "md") {
+        font-size: 15px;
+        @include setDimensions(80vw, 40px);
+    }
+    @include mediaQuery("min", "xl") {
+        @include setDimensions(40vw, 4vh);
+        font-size: 1vw;
+    }
+}

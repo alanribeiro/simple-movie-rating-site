@@ -1,0 +1,195 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.page-container {
+    background-color: $primaryColor;
+    width: 100vw;
+    min-height: 100vh;
+
+    &__no-movie-selected {
+        @include flexbox(column, center, center);
+        @include setDimensions(100%, 100%);
+
+        &__message {
+            margin-top: 30px;
+            @include setTextAttributes($fontBold, 25px, $primaryFontColor);
+            @include mediaQuery("min", "xl") {
+                font-size: 2vw;
+            }
+            @include mediaQuery("max", "md") {
+                font-size: 18px;
+            }
+        }
+
+        &__icon {
+            width: 120px;
+            @include mediaQuery("min", "xl") {
+                width: 10vw;
+            }
+        }
+    }
+
+    &__movie-details {
+        margin: auto;
+        flex-grow: 1;
+        width: 70%;
+        @include flexbox();
+        @include mediaQuery("max", "md") {
+            width: 90%;
+        }
+
+        &__header {
+            width: 100%;
+
+            &__information {
+                padding: 50px 0px;
+                @include flexbox(row, center, space-between);
+                @include mediaQuery("min", "xl") {
+                    padding: 5vw 0;
+                }
+
+                &__movie {
+                    &__title {
+                        @include setTextAttributes($fontBold, 40px, $primaryFontColor);
+                        @include mediaQuery("min", "xl") {
+                            font-size: 3vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 18px;
+                        }
+                    }
+
+                    &__year {
+                        @include setTextAttributes($fontRegular, 30px, $secondaryFontColor);
+                        @include mediaQuery("min", "xl") {
+                            font-size: 2vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                &__rating {
+                    @include flexbox(row, center, center);
+
+                    &__icon {
+                        color: $ratingSelectedColor;
+                        font-size: 40px;
+                        @include mediaQuery("min", "xl") {
+                            font-size: 3vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &__numbers {
+                        &__rate {
+                            @include setTextAttributes($fontBold, 30px, $primaryFontColor);
+                            @include mediaQuery("min", "xl") {
+                                font-size: 2vw;
+                            }
+                            @include mediaQuery("max", "md") {
+                                font-size: 18px;
+                            }
+                        }
+
+                        &__total {
+                            @include setTextAttributes($fontRegular, 18px, $secondaryFontColor);
+                            @include mediaQuery("min", "xl") {
+                                font-size: 1vw;
+                            }
+                            @include mediaQuery("max", "md") {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__details {
+                display: flex;
+
+                &__poster {
+                    width: 180px;
+                    @include mediaQuery("min", "xl") {
+                        width: 15vw;
+                    }
+                    @include mediaQuery("max", "md") {
+                        width: 100px;
+                    }
+                }
+
+                &__data {
+                    flex-grow: 1;
+                    padding: 0px 20px;
+                    @include flexbox(column);
+
+                    &__description {
+                        @include setTextAttributes($fontRegular, 16px, $primaryFontColor);
+                        @include mediaQuery("min", "xl") {
+                            font-size: 1vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &__length {
+                        margin: 10px 0px;
+                        @include setTextAttributes($fontRegular, 14px, $secondaryFontColor);
+                        @include mediaQuery("min", "xl") {
+                            font-size: 0.8vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 10px;
+                        }
+                    }
+
+                    &__cast {
+                        margin: 20px 0px;
+                        @include setTextAttributes($fontRegular, 14px, $secondaryFontColor);
+                        @include mediaQuery("min", "xl") {
+                            font-size: 0.8vw;
+                        }
+                        @include mediaQuery("max", "md") {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__rate-movie {
+            margin: 30px 0px;
+            @include flexbox(column, center, center);
+            @include setDimensions(100%, 100%);
+
+            &__title {
+                @include setTextAttributes($fontBold, 25px, $primaryFontColor);
+                @include mediaQuery("min", "xl") {
+                    font-size: 2vw;
+                }
+                @include mediaQuery("max", "md") {
+                    font-size: 18px;
+                }
+            }
+
+            &__categories {
+                margin: 30px 0px;
+                display: grid;
+                grid-template-columns: 0.5fr 0.5fr;
+                grid-gap: 20px 30%;
+                @include setDimensions(100%, 100%);
+                @include mediaQuery("min", "xl") {
+                    grid-gap: 3vw 30%;
+                    margin: 2vw 0;
+                }
+                @include mediaQuery("max", "md") {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}

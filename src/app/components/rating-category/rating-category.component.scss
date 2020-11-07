@@ -1,0 +1,33 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.rating-category {
+    @include flexbox(column, center, center);
+
+    &__category {
+        margin: 20px 0px;
+        @include setTextAttributes($fontRegular, 20px, $primaryFontColor);
+        @include mediaQuery("min", "xl") {
+            font-size: 2vw;
+        }
+        @include mediaQuery("max", "md") {
+            font-size: 16px;
+        }
+    }
+
+    &__rating-scale {
+        width: 100%;
+        @include flexbox(row, center, space-between);
+
+        &__star {
+            font-size: 30px;
+            @include mediaQuery("min", "xl") {
+                font-size: 3vw;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<main class="page-container">
+    <div class="common-container-width page-container__header">
+        <span class="page-container__header__title">{{ this.headerTitle }}</span>
+    </div>
+    <div class="common-container-width page-container__content-not-found" *ngIf="contentToDisplay === 'content-not-found'">
+        <img class="page-container__content-not-found__icon" src="../../../assets/images/movie.png">
+        <span class="page-container__content-not-found__message">Nenhum resultado encontrado.</span>
+    </div>
+    <div class="common-container-width page-container__content-error" *ngIf="contentToDisplay === 'search-error'">
+        <img class="page-container__content-error__icon" src="../../../assets/images/movie.png">
+        <span class="page-container__content-error__message">{{ this.searchError }}</span>
+    </div>
+    <div class="common-container-width page-container__content-movies" *ngIf="contentToDisplay === 'movies-result'">
+        <div *ngFor="let movie of moviesResult">
+            <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+    </div>
+</main>

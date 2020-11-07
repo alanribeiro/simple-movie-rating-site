@@ -1,0 +1,24 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.common {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.primary {
+    background-color: #FFF;
+    @include setDimensions(150px, 40px);
+    @include setTextAttributes($fontRegular, 20px, $primaryColor);
+    @include mediaQuery("min", "xl") {
+        @include setDimensions(10vw, 4vh);
+        font-size: 1vw;
+        border-radius: 2vw;
+    }
+
+}

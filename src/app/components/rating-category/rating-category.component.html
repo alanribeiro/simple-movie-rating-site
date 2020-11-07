@@ -1,0 +1,10 @@
+<main class="rating-category">
+    <span class="rating-category__category">{{ this.category }}</span>
+    <div class="rating-category__rating-scale">
+        <i class="rating-category__rating-scale__star material-icons" [ngStyle]="verifyColor(1)" (click)="rateCategory(1)">star_rate</i>
+        <i class="rating-category__rating-scale__star material-icons" [ngStyle]="verifyColor(2)" (click)="rateCategory(2)">star_rate</i>
+        <i class="rating-category__rating-scale__star material-icons" [ngStyle]="verifyColor(3)" (click)="rateCategory(3)">star_rate</i>
+        <i class="rating-category__rating-scale__star material-icons" [ngStyle]="verifyColor(4)" (click)="rateCategory(4)">star_rate</i>
+        <i class="rating-category__rating-scale__star material-icons" [ngStyle]="verifyColor(5)" (click)="rateCategory(5)">star_rate</i>
+    </div>
+</main>

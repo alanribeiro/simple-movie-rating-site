@@ -1,0 +1,75 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.common-container-width {
+    width: 80vw;
+}
+
+.page-container {
+    background-color: $primaryColor;
+    @include flexbox(column, center);
+    @include setDimensions(100vw, 100vh);
+
+    &__header {
+        padding: 20px 0px;
+        margin: 50px 0px;
+        border-bottom: 2px solid #FFF;
+        @include flexbox(column, center);
+
+        &__title {
+            @include setTextAttributes($fontBold, 30px, $primaryFontColor);
+            @include mediaQuery("min", "xl") {
+                font-size: 3vw;
+            }
+            @include mediaQuery("max", "md") {
+                font-size: 18px;
+            }
+        }
+
+        &__line {
+            border-bottom: 2px solid #FFF;
+        }
+    }
+
+    &__content-not-found {
+        flex-grow: 1;
+        @include flexbox(column, center, center);
+
+        &__message {
+            margin-top: 30px;
+            @include setTextAttributes($fontBold, 25px, $primaryFontColor);
+            @include mediaQuery("min", "xl") {
+                font-size: 2vw;
+            }
+            @include mediaQuery("max", "md") {
+                font-size: 18px;
+            }
+        }
+
+        &__icon {
+            width: 120px;
+            @include mediaQuery("min", "xl") {
+                width: 10vw;
+            }
+        }
+    }
+
+    &__content-error {
+        flex-grow: 1;
+        @include flexbox(column, center, center);
+
+        &__message {
+            margin-top: 30px;
+            @include setTextAttributes($fontBold, 25px, $primaryFontColor);
+        }
+
+        &__icon {
+            width: 120px;
+        }
+    }
+
+    &__content-movies {
+        flex-grow: 1;
+        @include flexbox(column, center);
+    }
+}

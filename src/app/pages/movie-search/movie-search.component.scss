@@ -1,0 +1,26 @@
+@import '../../../assets/utils/styling/mixins.scss';
+@import '../../../assets/utils/styling/variables.scss';
+
+.page-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../../assets/images/background.jpg');
+    @include flexbox(column, center, center);
+    @include setDimensions(100vw, 100vh);
+
+    &__content {
+        @include flexbox(column, center, center);
+
+        &__input-container {
+            margin: 70px 0px 40px 0px;
+        }
+
+        &__title {
+            @include setTextAttributes($fontBold, 50px, $primaryFontColor);
+            @include mediaQuery("max", "md") {
+                font-size: 30px;
+            }
+            @include mediaQuery("min", "xl") {
+                font-size: 5vw;
+            }
+        }
+    }
+}

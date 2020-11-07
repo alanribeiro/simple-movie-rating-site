@@ -1,0 +1,8 @@
+<main class="movie-card" (click)="seeMovieDetails()">
+    <div class="movie-card__poster">
+        <img class="movie-card__poster__image" src="{{ this.movie.poster.length > 0 ? this.movie.poster : '../../../assets/images/no-poster.jpg' }}" alt="Movie Poster" loading="lazy">
+    </div>
+    <div class="movie-card__information">
+        <span class="movie-card__information__title">{{ this.movie.title.length > 0 ? this.movie.title : 'Nome não disponível' }} ({{ this.movie.year.length > 0 ? this.movie.year : "Sem informação" }})</span>
+    </div>
+</main>

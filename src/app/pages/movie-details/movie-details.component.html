@@ -1,0 +1,41 @@
+<main class="page-container">
+    <div class="page-container__no-movie-selected" *ngIf="contentToDisplay === 'no-movie-selected'">
+        <img class="page-container__no-movie-selected__icon" src="../../../assets/images/movie.png" loading="lazy">
+        <span class="page-container__no-movie-selected__message">Nenhum filme foi selecionado.</span>
+    </div>
+    <div class="page-container__movie-details" *ngIf="contentToDisplay === 'movie-details'">
+        <div class="page-container__movie-details__header">
+            <div class="page-container__movie-details__header__information">
+                <div class="page-container__movie-details__header__information__movie">
+                    <span class="page-container__movie-details__header__information__movie__title">{{ this.movieSelected.title.length > 0 ? this.movieSelected.title : "Nome não disponível" }}</span>
+                    <span class="page-container__movie-details__header__information__movie__year">({{ this.movieSelected.year.length > 0 ? this.movieSelected.year : "Sem informação" }})</span>
+                </div>
+                <div class="page-container__movie-details__header__information__rating">
+                    <i class="page-container__movie-details__header__information__rating__icon material-icons">star_rate</i>
+                    <div class="page-container__movie-details__header__information__rating__numbers">
+                        <span class="page-container__movie-details__header__information__rating__numbers__rate">{{ this.movieSelected.rating.length > 0 ? this.movieSelected.rating : "?" }}</span>
+                        <span class="page-container__movie-details__header__information__rating__numbers__total">/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="page-container__movie-details__header__details">
+                <img class="page-container__movie-details__header__details__poster" src="{{ this.movieSelected.poster.length > 0 ? this.movieSelected.poster : '../../../assets/images/no-poster.jpg' }}" loading="lazy">
+                <div class="page-container__movie-details__header__details__data">
+                    <span class="page-container__movie-details__header__details__data__description">{{ this.movieSelected.plot.length > 0 ? this.movieSelected.plot : "Descrição não disponível" }}</span>
+                    <span class="page-container__movie-details__header__details__data__length">{{ this.movieSelected.length.length > 0 ? this.movieSelected.length : "Duração não disponível" }}</span>
+                    <span class="page-container__movie-details__header__details__data__cast">Cast: {{ this.castText }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-container__movie-details__rate-movie">
+            <span class="page-container__movie-details__rate-movie__title">Avalie este filme</span>
+            <div class="page-container__movie-details__rate-movie__categories">
+                <app-rating-category [category]="'Roteiro'"></app-rating-category>
+                <app-rating-category [category]="'Fotografia'"></app-rating-category>
+                <app-rating-category [category]="'Efeitos Especiais'"></app-rating-category>
+                <app-rating-category [category]="'Elenco'"></app-rating-category>
+            </div>
+            <app-action-button [type]="'primary'" [title]="'Avaliar'" (click)="rateMovie()"></app-action-button>
+        </div>
+    </div>
+</main>
