@@ -1,6 +1,6 @@
 # simple-movie-rating-site
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0 for TRIEduc coding challenge.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Installing Dependencies
 
